@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body><h2>El mercado como arreglo de industrias</h2>
+<p id="demo"></p>
+<script>
+var txt = '{"mercado":[{"industria":{"nbindustria":"A", "insumos":[{"insumo":{"nbinsumo":"b", "coeficiente":2}},{"insumo":{"nbinsumo":"c", "coeficiente":3}}]}}]}'
+var obj = JSON.parse(txt);
+document.getElementById("demo").innerHTML = obj.mercado[0].industria.nbindustria + ", " + obj.mercado[0].industria.insumos[1].insumo.nbinsumo + ", " + obj.mercado[0].industria.insumos[1].insumo.coeficiente ;
+</script>
+</body>
+</html>
