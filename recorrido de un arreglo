@@ -1,0 +1,15 @@
+<html>
+<body>
+<h2>Recorrido de un arreglo.</h2>
+
+<p id="demo"></p>
+
+<script>var actual1 =0;
+var text = '{"actual":"function() {for( i in obj.inventario){ actual1 += +obj.inventario[i].embarque.cantidad}return actual1;}","inventario":[{"embarque":{"cantidad":2000,"costounitario":10}},{"embarque":{"cantidad":27,"costounitario":1}},{"embarque":{"cantidad":25,"costounitario":4}},{"embarque":{"cantidad":37,"costounitario":2}}]}';
+var obj = JSON.parse(text);
+obj.actual = eval("(" + obj.actual + ")");
+document.getElementById("demo").innerHTML = obj.actual();
+</script>
+
+</body>
+</html>
