@@ -1,5 +1,5 @@
-<!DOCTYPE html> <html> <body> <h1>Datos Generales</h1> <p id="demo"></p> <script> var actual1 =0; var actual2 =0; var insumo1=0; var insumo2=0; var text = '{"dimension":{"suma":"function() {for( i in objeto.dimension.valores[i].valor.conjunta){ actual1 += +objeto.dimension.valores[i].valor.conjunta} return actual1;}", "nbdimension":"industria","valores":[{"valor":{"nbvalor":"A","conjunta": 0.05}},{"valor":{"nbvalor":"B","conjunta": 0.07}},{"valor":{"nbvalor":"C","conjunta": 0.09}}]}}' ;
+<!DOCTYPE html> <html> <body> <h1>Jproba</h1> <p id="demo"></p> <script> var actual1 =0; var actual2 =0; var insumo1=0; var insumo2=0; var text = '{"dimension":{"directa":"function() {for( i in objeto.dimension.valores){ actual1 += +objeto.dimension.valores[i].valor.conjunta} return actual1;}", "nbdimension":"Nbdim1","valores":[{"valor":{"nbvalor":"A","conjunta": 0.05}},{"valor":{"nbvalor":"B","conjunta": 0.07}},{"valor":{"nbvalor":"C","conjunta": 0.09}}]}}' ;
 var objeto = JSON.parse(text);
-objeto.dimension.suma = eval("(" + objeto.dimension.suma + ")");
-document.getElementById("demo").innerHTML = objeto.dimension.nbdimension + "<br>" + objeto.dimension.suma;
+objeto.dimension.directa = eval("(" + objeto.dimension.directa + ")");
+document.getElementById("demo").innerHTML = "condicional: "+ objeto.dimension.directa();
 </script> </body> </html>
