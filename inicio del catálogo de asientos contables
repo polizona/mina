@@ -1,0 +1,25 @@
+
+<html>
+	<head>
+		<Title>Asientos de diario</Title>	
+	</head>
+	<body><h3> ** falta añadir los controles para capturar montos **</h3>
+		<form action="funcion.php" method="get">
+			
+			<label>Operaciones de activo circulante</label><br><br>
+			
+			Selecciona la operación:
+			<select name="opciones">
+				<option value="A"> recepción de insumo1</option>
+				<option value="B"> recepción de insumo2</option>
+				<option value="C"> inicio de orden de trabajo</option>
+				<option value="D"> fin de orden de trabajo</option>
+				<option value="E"> envío de embarque</option>
+				<option value="F"> cobro a clientes</option>
+				<option value="G"> pago a proveedores</option>
+			</select><br><br>
+			
+			<input type="submit"/>
+		</form>
+	</body>
+</html>
