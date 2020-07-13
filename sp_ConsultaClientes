@@ -1,0 +1,24 @@
+CREATE DEFINER=`polizona_in5`@`localhost` PROCEDURE `sp_ConsultaClientes`(in ind text)
+begin
+  IF ind = 'A' THEN SELECT financieras.boleta, financieras.industria, financieras.materia, (proveedores/bancos) as liquidez, if((proveedores/bancos) < 0.05, 'Cliente bueno', 'Cliente malo') as evaluacion from financieras where industria = 'B' or industria= 'C' order by industria,(proveedores/bancos);
+
+  ELSE IF ind = 'B' THEN SELECT financieras.boleta, financieras.industria, financieras.materia, (proveedores/bancos) as liquidez, if((proveedores/bancos) < 0.05, 'Cliente bueno', 'Cliente malo') as evaluacion from financieras where industria = 'C' or industria = 'D' order by industria,(proveedores/bancos);
+
+
+  ELSE IF ind = 'C' THEN SELECT financieras.boleta, financieras.industria, financieras.materia, (proveedores/bancos) as liquidez, if((proveedores/bancos) < 0.05, 'Cliente bueno', 'Cliente malo') as evaluacion from financieras where industria = 'D' or industria = 'E' order by industria,(proveedores/bancos);
+
+  ELSE IF ind = 'D' THEN SELECT financieras.boleta, financieras.industria, financieras.materia, (proveedores/bancos) as liquidez, if((proveedores/bancos) < 0.05, 'Cliente bueno', 'Cliente malo') as evaluacion from financieras where industria = 'E' or industria = 'F' order by industria,(proveedores/bancos);
+
+  ELSE IF ind = 'E' THEN SELECT financieras.boleta, financieras.industria, financieras.materia, (proveedores/bancos) as liquidez, if((proveedores/bancos) < 0.05, 'Cliente bueno', 'Cliente malo') as evaluacion from financieras where industria = 'F' or industria = 'A' order by industria,(proveedores/bancos);
+
+  ELSE IF ind = 'F' THEN SELECT '0' as boleta,'0' as industria,'0' as materia,'0' as liquidez,'0' as evaluacion;
+
+ ELSE SELECT 'No existe';
+
+  END IF;
+  END IF;
+END IF;
+  END IF;
+  END IF;
+END IF;
+end
