@@ -1,24 +1,54 @@
 <html>
+<head>
+<title>Clasificador</title>
+</head
 <body>
-<h2>Recorrido de un arreglo</h2>
-<p >Costo Total Embarque</p>
-<p id="costoembarque"></p>
-<p >Costo Total unidades</p>
-<p id="unidades"></p>
+<h1>CLASIFICADOR DE EMBARQUES</h1>
+<?PHP
+	$hostname_localhost ="68.70.164.26";
+	$database_localhost ="polizona_mercado";
+	$username_localhost ="polizona_estudiante";
+	$password_localhost ="UPIICSAes#1";
+	$json=array();
+				
+		$opcion = $_GET["opciones"];
+		$conexion = mysqli_connect($hostname_localhost,$username_localhost,$password_localhost,$database_localhost);
+		$consulta="select idembarque, idalmacen, unidades, costoembarque from embarque where idempresa='77';";
+		$resultado=mysqli_query($conexion,$consulta);
+		if($conexion){
+			echo "<table>";
+			echo "<th> idembarque</th>";
+			echo "<th> idalmacen</th>";
+			echo "<th> unidades</th>";
+			echo "<th> costoembarque</th>";
+			while($registro=mysqli_fetch_array($resultado)){
+				$result["idembarque"]=$registro['idembarque'];
+				$result["idalmacen"]=$registro['idalmacen'];
+				$result["unidades"]=$registro['unidades'];
+				$result["costoembarque"]=$registro['costoembarque'];
+				$json['Clasificador'][]=$result;
+				
+				echo "<tr>";
+					echo "<td>".$registro['idembarque']." </td>";
+					echo "<td>".$registro['idalmacen']." </td>";
+					echo "<td>".$registro['unidades']." </td>";
+					echo "<td>".$registro['costoembarque']." </td>";
+				echo "</tr>";
+			}
+			
+			echo "</table>";
+			
+			echo json_encode($json, JSON_NUMERIC_CHECK);
+		
+			mysqli_close($conexion);
+		}
+		else{
+			echo "error";
+		}
+		
+			
+	?>
 
-
-<script>
-var actual1 =0;
-var Unidades1 =0;
-
-var text = '{"actual":"function() {for( i in obj.Clasificador){ actual1 += +obj.Clasificador[i].costoembarque}return actual1;}","Unidades":"function() {for( e in obj.Clasificador){ Unidades1 += +obj.Clasificador[e].unidades}return Unidades1;}","Clasificador":[{"idembarque":58,"idalmacen":1,"unidades":300,"costoembarque":3081},{"idembarque":231,"idalmacen":1,"unidades":267,"costoembarque":3286},{"idembarque":404,"idalmacen":1,"unidades":240,"costoembarque":2973},{"idembarque":577,"idalmacen":2,"unidades":198,"costoembarque":3303},{"idembarque":750,"idalmacen":2,"unidades":137,"costoembarque":3107}]}';
-var obj = JSON.parse(text);
-obj.actual = eval("(" + obj.actual + ")");
-document.getElementById("costoembarque").innerHTML = obj.actual();
-
-obj.Unidades = eval("(" + obj.Unidades + ")");
-document.getElementById("unidades").innerHTML =obj.Unidades();
-</script>
-
+<br><button onclick="location.href='sumaarreglo.php'" >Suma Almacen</button>
 </body>
 </html>
