@@ -1,0 +1,24 @@
+<html>
+<body>
+<h2>Recorrido de un arreglo</h2>
+<p >Costo Total Embarque</p>
+<p id="costoembarque"></p>
+<p >Costo Total unidades</p>
+<p id="unidades"></p>
+
+
+<script>
+var actual1 =0;
+var Unidades1 =0;
+
+var text = '{"actual":"function() {for( i in obj.Clasificador){ actual1 += +obj.Clasificador[i].costoembarque}return actual1;}","Unidades":"function() {for( e in obj.Clasificador){ Unidades1 += +obj.Clasificador[e].unidades}return Unidades1;}","Clasificador":[{"idembarque":58,"idalmacen":1,"unidades":300,"costoembarque":3081},{"idembarque":231,"idalmacen":1,"unidades":267,"costoembarque":3286},{"idembarque":404,"idalmacen":1,"unidades":240,"costoembarque":2973},{"idembarque":577,"idalmacen":2,"unidades":198,"costoembarque":3303},{"idembarque":750,"idalmacen":2,"unidades":137,"costoembarque":3107}]}';
+var obj = JSON.parse(text);
+obj.actual = eval("(" + obj.actual + ")");
+document.getElementById("costoembarque").innerHTML = obj.actual();
+
+obj.Unidades = eval("(" + obj.Unidades + ")");
+document.getElementById("unidades").innerHTML =obj.Unidades();
+</script>
+
+</body>
+</html>
