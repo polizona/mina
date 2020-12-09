@@ -1,0 +1,4 @@
+  select * from embarque where idempresa='139'
+    select sum(costoembarque)/sum(unidades) from embarque where idempresa='139' and idalmacen='1'
+select sum(costoembarque)/sum(unidades) from embarque where idempresa='139' and idalmacen='2'
+  select coeficiente from encadenamiento where idcompradora =(select idindustria from empresa where idempresa='139')
