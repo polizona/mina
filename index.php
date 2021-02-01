@@ -1,23 +1,30 @@
 <html>
-	<head>
-		<Title>ClasificaciÃ³n de Clientes</Title>	
-	</head>
-	<body>
-		<form action="funcion.php" method="get">
-			
-			<label>Quiero Clasificar a mis clientes</label><br><br>
-			
-			Selecciona la industria a la cual perteneces:
-			<select name="opciones">
-				<option value="A"> A</option>
-				<option value="B"> B</option>
-				<option value="C"> C</option>
-				<option value="D"> D</option>
-				<option value="E"> E</option>
-				<option value="F"> F</option>
-			</select><br><br>
-			
-			<input type="submit"/>
-		</form>
-	</body>
+	
+<body>
+<div class="container">
+<div class="row align-items-center">
+<div class="col-12 align-self-center text-center p-4">
+<h1>Escribe tu nombre</h1>
+<h2> Extraordinario de Diseño de Sistemas </h2>
+<h2> 2CM32 </h2>								
+<br>
+
+<form action="recupera.php" method="get">
+<button type="submit">consulta</button>
+</form>
+<br>
+					
+
+<form action="graba.php" method="post">
+<fieldset>
+  <legend> Ingrese alcaldia </legend>
+    <p><label>idalcaldia:<input type="int" name="idalcaldia" /></label> </p>
+    <p><label>nombre:   <input type="text" name="alcaldia" /></label></p>
+    <p><input type="submit" value="enviar"/></p>
+</fieldset>
+</form>
+</div>
+</div>	
+</div>
+</body>
 </html>
