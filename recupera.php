@@ -1,8 +1,8 @@
 <?PHP
 	$hostname_localhost ="68.70.164.26";
-	$database_localhost ="polizona_uno";
-	$username_localhost ="polizona_profe";
-	$password_localhost ="Poli-profe3";
+	$database_localhost ="polizona_XX";
+	$username_localhost ="polizona_XX";
+	$password_localhost ="tu_contraseña";
 	$json=array();
 				
 	$conexion = mysqli_connect($hostname_localhost,$username_localhost,$password_localhost,$database_localhost);
