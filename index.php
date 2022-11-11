@@ -5,8 +5,8 @@
 <div class="row align-items-center">
 <div class="col-12 align-self-center text-center p-4">
 <h1>Escribe tu nombre</h1>
-<h2> Extraordinario de Diseño de Sistemas </h2>
-<h2> 2CM32 </h2>								
+<h2> Ejercicio de conexion a base de datos </h2>
+								
 <br>
 
 <form action="recupera.php" method="get">
